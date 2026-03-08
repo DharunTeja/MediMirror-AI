@@ -1,0 +1,143 @@
+Overview
+
+MediMirror AI processes prescriptions using voice recognition, OCR extraction, and intelligent parsing algorithms to convert raw prescription instructions into structured medication schedules.
+
+The system consists of four main algorithmic modules:
+
+Voice Prescription Processing
+
+OCR Prescription Extraction
+
+Smart Prescription Parsing
+
+Medication Reminder Scheduling
+
+1. Voice Prescription Processing Algorithm
+
+This algorithm captures spoken prescriptions and converts them into structured medication instructions.
+
+Steps
+
+Initialize speech recognition using Web Speech API.
+
+Capture voice input from the user.
+
+Convert speech to text using the speech recognition engine.
+
+Detect the spoken language using the LibreTranslate API.
+
+Pass the recognized text to the prescription parsing module.
+
+Extract medicine details.
+
+Populate a structured prescription table.
+
+Use text-to-speech to read back the instructions.
+
+Pseudocode
+Start Speech Recognition
+Capture spoken text
+Convert speech to text
+Detect language of text
+Send text to prescription parser
+Extract medicine details
+Store data in table
+Read prescription aloud using TTS
+Stop recognition
+2. OCR Prescription Extraction Algorithm
+
+This algorithm extracts text from uploaded prescription images or PDFs.
+
+Steps
+
+User uploads image or PDF.
+
+Convert PDF pages to image if necessary.
+
+Use Tesseract.js to perform OCR.
+
+Extract raw text from image.
+
+Filter relevant medication instructions.
+
+Send filtered text to the parsing module.
+
+Pseudocode
+User uploads prescription file
+If file type == image
+    Run OCR on image
+Else if file type == PDF
+    Convert first page to image
+    Run OCR
+Extract raw text
+Filter medication lines
+Send filtered text to parser
+3. Smart Prescription Parsing Algorithm
+
+This algorithm identifies medication attributes using pattern matching.
+
+Extracted attributes include:
+
+Tablet Name
+
+Dose
+
+Frequency
+
+Timing
+
+Duration
+
+Key Techniques
+
+Regex pattern matching is used for identifying medical information.
+
+Examples:
+
+Dose detection:
+
+(\d+ mg | \d+ ml | \d+ mcg)
+
+Frequency detection:
+
+once | twice | daily | every X hours
+
+Duration detection:
+
+for X days | for X weeks
+Pseudocode
+For each sentence in prescription text
+    Detect tablet name
+    Detect dosage
+    Detect frequency
+    Detect timing (before/after meals)
+    Detect duration
+Store extracted data
+Display in prescription table
+4. Medication Reminder Algorithm
+
+This module schedules medication reminders based on frequency.
+
+Steps
+
+Read prescription table entries.
+
+Identify medication frequency.
+
+Convert frequency into time intervals.
+
+Schedule reminders using JavaScript notifications.
+
+Example intervals:
+
+Frequency	Interval
+Once	24 hours
+Twice	12 hours
+Three times	8 hours
+Four times	6 hours
+Pseudocode
+For each medication
+    Read frequency
+    Convert frequency to interval
+    Schedule reminder notification
+Notify user when time occurs

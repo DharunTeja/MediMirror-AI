@@ -1,0 +1,93 @@
+MediMirror AI is an AI-powered prescription assistant designed to help patients understand and follow medical prescriptions more effectively, particularly targeting individuals with limited medical literacy.
+
+The system combines Artificial Intelligence, Optical Character Recognition, Voice Processing, and QR-based medical record sharing to create an intelligent healthcare support platform.
+
+Problem Statement
+
+Many patients struggle to understand handwritten prescriptions or complex medication instructions provided by doctors. This leads to:
+
+Incorrect medication intake
+
+Missed doses
+
+Medication misuse
+
+Poor treatment adherence
+
+This problem is especially severe for:
+
+Elderly patients
+
+Illiterate individuals
+
+Rural populations
+
+Non-native language speakers
+
+Proposed Solution
+
+MediMirror AI solves this problem by providing an interactive prescription interpretation system that can:
+
+Convert prescriptions into structured medication instructions
+
+Read medication instructions aloud
+
+Extract prescription text from images
+
+Generate reminders for medication schedules
+
+Allow doctors to access patient data through QR scanning
+
+Key Features
+Voice Prescription Assistant
+
+Users can speak their prescription instructions and the system converts them into structured medication details.
+
+OCR Prescription Reader
+
+Patients can upload prescription images or PDFs, and the system extracts medication details automatically.
+
+Multilingual Voice Output
+
+The system detects the language and reads instructions aloud using text-to-speech.
+
+Smart Medication Reminders
+
+Automatic reminders notify users when it is time to take medication.
+
+QR-based Medical Profile Sharing
+
+Patients can generate a QR code containing their medical profile which doctors can scan for quick access.
+
+Target Users
+
+Patients with low health literacy
+
+Elderly individuals
+
+Rural healthcare environments
+
+Hospitals and clinics
+
+Doctors and healthcare providers
+
+Technologies Used
+Technology	Purpose
+HTML/CSS/JS	Frontend interface
+Firebase	Authentication & database
+Web Speech API	Voice recognition
+Tesseract.js	OCR text extraction
+PDF.js	PDF processing
+QRCode.js	QR generation
+html5-qrcode	QR scanning
+Expected Impact
+
+MediMirror AI improves:
+
+Patient medication adherence
+
+Healthcare accessibility
+
+Communication between doctors and patients
+
+Digital healthcare adoption

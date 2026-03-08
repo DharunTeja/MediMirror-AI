@@ -1,0 +1,96 @@
+
+
+MediMirror AI follows a client-server web architecture with multiple intelligent modules.
+
+High-Level Architecture
+User Interface
+      │
+      ▼
+Frontend Web Application
+      │
+      ├── Voice Processing Module
+      ├── OCR Extraction Module
+      ├── Prescription Parsing Engine
+      ├── Reminder System
+      │
+      ▼
+Firebase Backend
+      │
+      ├── Authentication
+      ├── Firestore Database
+      │
+      ▼
+Doctor Access System
+(QR Code Scan)
+Core Components
+1. Frontend Interface
+
+Handles:
+
+User interaction
+
+Voice recording
+
+Prescription display
+
+Image upload
+
+Technologies:
+
+HTML
+
+CSS
+
+JavaScript
+
+2. Voice Recognition Module
+
+Captures spoken prescriptions using Web Speech API and converts speech into text for processing.
+
+3. OCR Processing Module
+
+Extracts prescription text from images and PDF documents using Tesseract.js.
+
+4. Prescription Parsing Engine
+
+Analyzes extracted text and converts it into structured medication data using pattern matching.
+
+5. Reminder Engine
+
+Schedules medication alerts based on frequency and timing.
+
+6. QR Medical Profile System
+
+Allows patients to generate a QR code containing their medical profile. Doctors can scan this QR code to instantly retrieve patient information.
+
+7. Backend Services
+
+Firebase provides:
+
+Authentication
+
+Data storage
+
+User role management
+
+Data Flow
+
+User uploads prescription or speaks instructions.
+
+System converts input into text.
+
+Prescription parser extracts medication details.
+
+Data is stored in local storage or database.
+
+Medication reminders are scheduled.
+
+Doctor can access patient information via QR scan.
+
+Security Considerations
+
+Role-based authentication
+
+Controlled doctor access to patient profiles
+
+Secure Firebase authentication
