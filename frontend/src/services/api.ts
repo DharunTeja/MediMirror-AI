@@ -1,4 +1,5 @@
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+const _baseUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/+$/, '');
+const API_BASE = _baseUrl.endsWith('/api') ? _baseUrl : `${_baseUrl}/api`;
 
 class ApiService {
     private getHeaders(includeAuth: boolean = true): HeadersInit {
