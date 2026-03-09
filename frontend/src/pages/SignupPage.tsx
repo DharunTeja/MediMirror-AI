@@ -10,6 +10,7 @@ export default function SignupPage() {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [role, setRole] = useState<UserRole>('patient');
     const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
     const [loading, setLoading] = useState(false);
     const { signUp } = useAuth();
     const navigate = useNavigate();
@@ -17,6 +18,7 @@ export default function SignupPage() {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         setError('');
+        setSuccess('');
 
         if (password !== confirmPassword) {
             setError('Passwords do not match');
@@ -33,7 +35,13 @@ export default function SignupPage() {
             await signUp(email, password, fullName, role);
             navigate('/dashboard');
         } catch (err: any) {
-            setError(err.message || 'Registration failed');
+            const msg = err.message || 'Registration failed';
+            if (msg.toLowerCase().includes('check your email')) {
+                setSuccess(msg);
+                setTimeout(() => navigate('/login'), 3000);
+            } else {
+                setError(msg);
+            }
         } finally {
             setLoading(false);
         }
@@ -51,6 +59,7 @@ export default function SignupPage() {
                 </div>
 
                 {error && <div className="alert alert-error">{error}</div>}
+                {success && <div className="alert alert-error" style={{ background: 'rgba(16, 185, 129, 0.15)', borderColor: 'rgba(16, 185, 129, 0.3)', color: '#10b981' }}>{success}</div>}
 
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">

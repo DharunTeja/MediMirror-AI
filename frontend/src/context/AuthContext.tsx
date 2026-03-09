@@ -70,6 +70,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
                 isLoading: false,
                 isAuthenticated: true,
             });
+        } else {
+            // No session token — email confirmation is likely required
+            throw new Error(
+                'Account created! Please check your email to confirm your account before signing in.'
+            );
         }
     };
 
